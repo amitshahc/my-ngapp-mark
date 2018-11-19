@@ -7,14 +7,17 @@ import { Child1input } from './interfaces/child1input';
   template: `
     <p>
       {{localInput.title}}<br />
-      {{localInput.description}}
+      {{localInput.description}}<br />
       <button (click)="sendUpdatedTitle()">Update Title</button>
+      <br /><br />
+      Primitive Input: {{ primitiveInput }}      
     </p>
   `,
   styles: []
 })
 export class Child1Component implements OnInit {
 
+  @Input() primitiveInput: string;
   @Input('AliasInput') localInput: Child1input;
   @Output() updateParentEvent = new EventEmitter<boolean>();
   private btnClick: boolean = false;
@@ -30,6 +33,7 @@ export class Child1Component implements OnInit {
 
   sendUpdatedTitle() {
     //console.log('sendUpdatedTitle()');
+    this.primitiveInput = "Child primitive string";
     this.btnClick = true;
     this.updateParentEvent.emit(this.btnClick);
   }

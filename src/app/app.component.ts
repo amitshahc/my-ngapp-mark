@@ -17,6 +17,7 @@ export class AppComponent {
     description: 'Parent Description ...'
   }
   private cntClick = 0;
+  private primitiveParent: string = "Parent String"; 
 
   constructor() {
     console.clear();
@@ -31,13 +32,18 @@ export class AppComponent {
     //   () => console.table('ParentInput: ',
     //     this.ParentInput.title), 7000
     // );
+    setTimeout(function () {
+      this.primitiveParent = 'New Updated Primitive from Parent';
+    }.bind(this), 2000);
   }
 
   parentCatchUpdate(clicked: boolean) {
     //console.table(childInput);
     if (clicked) {
       this.cntClick++;
-      this.ParentInput.title = 'Child updated the title '+this.cntClick+' times';  
-    }    
+      this.ParentInput.title = 'Child updated the title ' + this.cntClick + ' times';
+      //this.primitiveParent = "New Parent String";
+      console.log(this.primitiveParent);
+    }
   }
 }
