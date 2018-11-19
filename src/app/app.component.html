@@ -1,3 +1,5 @@
-<myapp-child1 [AliasInput]="ParentInput"></myapp-child1>
+<myapp-child1 [AliasInput]="ParentInput"
+    (updateParentEvent)="parentCatchUpdate($event)"
+></myapp-child1>
 
 <router-outlet></router-outlet>
