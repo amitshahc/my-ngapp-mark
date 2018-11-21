@@ -18,7 +18,7 @@ export class AppComponent {
   }
   private cntClick = 0;
   private primitiveParent: string = "Parent String"; 
-  parent_var:string = "ngModel_value";
+  parent_var:string = "InitVal from Parent";
 
   constructor() {
     console.clear();

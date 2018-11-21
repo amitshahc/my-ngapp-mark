@@ -13,7 +13,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
       <!-- input type="text" [ngModel]="child_var" (ngModelChange)="childChanged($event)"><br / -->
       
       Child: {{child_var}}<br />
-      <button (click)="update()">Update from Child</button>
+      <button (click)="updateParent()">Update from Child</button>
     </p>
   `,
   styles: []
@@ -27,7 +27,8 @@ export class Child2NgModelComponent implements OnInit {
   ngOnInit() {
   }
 
-  update() {
+  //This is to update Parent variable
+  updateParent() {
     //this.child_var += "*";
     this.child_varChange.emit(this.child_var + "*")
   }
