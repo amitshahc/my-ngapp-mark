@@ -18,6 +18,7 @@ export class AppComponent {
   }
   private cntClick = 0;
   private primitiveParent: string = "Parent String"; 
+  parent_var:string = "ngModel_value";
 
   constructor() {
     console.clear();
@@ -45,5 +46,9 @@ export class AppComponent {
       //this.primitiveParent = "New Parent String";
       console.log(this.primitiveParent);
     }
+  }
+
+  updateChild2() {
+    this.parent_var += "-";
   }
 }

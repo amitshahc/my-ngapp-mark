@@ -2,4 +2,19 @@
     (updateParentEvent)="parentCatchUpdate($event)"
 ></myapp-child1>
 
+
+<hr>
+<h2>[(ngModel)]<sub>Two-way data binding</sub></h2>
+Parent: {{parent_var}}<br />
+<button (click)="updateChild2()">Update from Parent</button>
+
+<!--
+    Two-way data binding between Parent-Chile Components
+    [(ngModel)] on <child-component>
+-->
+<myapp-child2 [(child_var)]="parent_var">    
+</myapp-child2>
+
+
+
 <router-outlet></router-outlet>
