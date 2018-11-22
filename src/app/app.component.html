@@ -15,6 +15,10 @@ Parent: {{parent_var}}<br />
 <myapp-child2 [(child_var)]="parent_var">    
 </myapp-child2>
 
-
+<hr>
+<div attributeDirective_1 [textColor]="'red'" [bgColorHover]="parentBgCol ? parentBgCol : '#ffff00'">Attribute Directive 1</div>
+<br />
+<div attributeDirective_2 [color]="'blue'" [bgColor]="'#ff0000'">Attribute Directive 2</div>
+<button (click)="parentBgCol='orange'">Change to Orange (from Parent)</button>
 
 <router-outlet></router-outlet>
