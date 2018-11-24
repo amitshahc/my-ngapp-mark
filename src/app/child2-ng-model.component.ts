@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'myapp-child2',
@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
        Two-way data binding on input within same component variable 
        [(ngModel)] on <input> html element
       -->
-      <input type="text" [(ngModel)]="child_var"><br />
+      <input #input1 type="text" [(ngModel)]="child_var"><br />
       <!-- Alternavtive to [(ngModel)] catch on event  -->
       <!-- input type="text" [ngModel]="child_var" (ngModelChange)="childChanged($event)"><br / -->
       
@@ -22,9 +22,12 @@ export class Child2NgModelComponent implements OnInit {
 
   @Input() child_var: string;
   @Output() child_varChange = new EventEmitter<string>();
+  @ViewChild('input1') input1: ElementRef;
+
   constructor() { }
 
   ngOnInit() {
+    this.input1.nativeElement.focus();
   }
 
   //This is to update Parent variable
