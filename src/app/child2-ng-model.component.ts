@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild, Renderer } from '@angular/core';
 
 @Component({
   selector: 'myapp-child2',
@@ -24,10 +24,11 @@ export class Child2NgModelComponent implements OnInit {
   @Output() child_varChange = new EventEmitter<string>();
   @ViewChild('input1') input1: ElementRef;
 
-  constructor() { }
+  constructor(private _renderer: Renderer) { }
 
   ngOnInit() {
-    this.input1.nativeElement.focus();
+    //this.input1.nativeElement.focus();
+    this._renderer.invokeElementMethod(this.input1.nativeElement, 'focus', []);   
   }
 
   //This is to update Parent variable
