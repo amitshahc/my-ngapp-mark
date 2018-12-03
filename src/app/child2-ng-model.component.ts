@@ -4,13 +4,14 @@ import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild, 
   selector: 'myapp-child2',
   template: `
     <p>
-      <!--
-       Two-way data binding on input within same component variable 
-       [(ngModel)] on <input> html element
-      -->
+        <!--
+        Two-way data binding on input within same component variable 
+        [(ngModel)] on <input> html element
+        -->
+        
       <input #input1 type="text" [(ngModel)]="child_var"><br />
-      <!-- Alternavtive to [(ngModel)] catch on event  -->
-      <!-- input type="text" [ngModel]="child_var" (ngModelChange)="childChanged($event)"><br / -->
+        <!-- Alternavtive to [(ngModel)] catch on event  -->
+        <!-- input type="text" [ngModel]="child_var" (ngModelChange)="childChanged($event)"><br / -->
       
       Child: {{child_var}}<br />
       <button (click)="updateParent()">Update from Child</button>

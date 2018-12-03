@@ -1,7 +1,4 @@
-<myapp-child1 [AliasInput]="ParentInput" [primitiveInput]="primitiveParent"
-    (updateParentEvent)="parentCatchUpdate($event)"
-></myapp-child1>
-
+<myapp-child1 [AliasInput]="ParentInput" [primitiveInput]="primitiveParent" (updateParentEvent)="parentCatchUpdate($event)"></myapp-child1>
 
 <hr>
 <h2>[(ngModel)]<sub>Two-way data binding</sub></h2>
@@ -9,16 +6,27 @@ Parent: {{parent_var}}<br />
 <button (click)="updateChild2()">Update from Parent</button>
 
 <!--
-    Two-way data binding between Parent-Chile Components
+    Two-way data binding between Parent-Child Components
     [(ngModel)] on <child-component>
 -->
-<myapp-child2 [(child_var)]="parent_var">    
+<myapp-child2 [(child_var)]="parent_var">
 </myapp-child2>
 
 <hr>
-<div attributeDirective_1 [textColor]="'red'" [bgColorHover]="parentBgCol ? parentBgCol : '#ffff00'">Attribute Directive 1</div>
+<div attributeDirective_1 [textColor]="'red'" [bgColorHover]="parentBgCol ? parentBgCol : '#ffff00'">Attribute
+  Directive 1</div>
 <br />
 <div attributeDirective_2 [color]="'blue'" [bgColor]="'#ff0000'">Attribute Directive 2</div>
 <button (click)="parentBgCol='orange'">Change to Orange (from Parent)</button>
 
 <router-outlet></router-outlet>
+
+<br><br><br>
+<hr>
+<h1>Parent</h1>
+<hr>
+<parent>  
+    <footer>Parent-footer content</footer>
+    <Pchild1>        
+    </Pchild1>
+</parent>

@@ -1,9 +1,5 @@
-import {
-  Component
-} from '@angular/core';
-import {
-  Child1input
-} from './interfaces/child1input';
+import {  Component } from '@angular/core';
+import {  Child1input } from './interfaces/child1input';
 
 @Component({
   selector: 'app-root',
